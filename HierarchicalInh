@@ -1,0 +1,43 @@
+class Animal {
+    String name;
+
+    public Animal(String name) {
+        this.name = name;
+    }
+
+    public void speak() {
+        System.out.println(name + " makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    public Dog(String name) {
+        super(name);
+    }
+
+    @Override
+    public void speak() {
+        System.out.println(name + " barks");
+    }
+}
+
+class Cat extends Animal {
+    public Cat(String name) {
+        super(name);
+    }
+
+    @Override
+    public void speak() {
+        System.out.println(name + " meows");
+    }
+}
+
+public class HierarchicalInh {
+    public static void main(String[] args) {
+        Dog dog = new Dog("Buddy");
+        dog.speak();  // Output: Buddy barks
+
+        Cat cat = new Cat("Whiskers");
+        cat.speak();  // Output: Whiskers meows
+    }
+}
