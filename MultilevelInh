@@ -1,0 +1,45 @@
+class Animal {
+    String name;
+
+    public Animal(String name) {
+        this.name = name;
+    }
+
+    public void speak() {
+        System.out.println(name + " makes a sound");
+    }
+}
+
+class Mammal extends Animal {
+    public Mammal(String name) {
+        super(name);
+    }
+
+    public void walk() {
+        System.out.println(name + " walks on land");
+    }
+}
+
+class Dog extends Mammal {
+    public Dog(String name) {
+        super(name);
+    }
+
+    @Override
+    public void speak() {
+        System.out.println(name + " barks");
+    }
+
+    public void fetch() {
+        System.out.println(name + " fetches the ball");
+    }
+}
+
+public class MultilevelInh {
+    public static void main(String[] args) {
+        Dog dog = new Dog("Buddy");
+        dog.speak();  // Output: Buddy barks
+        dog.walk();   // Output: Buddy walks on land
+        dog.fetch();  // Output: Buddy fetches the ball
+    }
+}
