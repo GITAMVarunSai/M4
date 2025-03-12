@@ -1,0 +1,29 @@
+class Animal {
+    String name = "Animal";
+
+    public void display() {
+        System.out.println("Animal class display");
+    }
+}
+
+class Dog extends Animal {
+    String name = "Dog";
+
+    public void display() {
+        super.display();  // Calls the display method of Animal class
+        System.out.println("Dog class display");
+    }
+
+    public void showName() {
+        System.out.println("Animal name: " + super.name);  // Accesses the name field from Animal class
+        System.out.println("Dog name: " + name);  // Accesses the name field from Dog class
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.display();  // Output: Animal class display  Dog class display
+        dog.showName();  // Output: Animal name: Animal  Dog name: Dog
+    }
+}
